@@ -163,10 +163,13 @@ namespace Ryujinx.Ava.Input
 
         private static (short, short) GetStickValues(ref KeyboardStateSnapshot snapshot, JoyconConfigKeyboardStick<ConfigKey> stickConfig)
         {
-            short stickX = 0;
-            short stickY = 0;
-
-            if (snapshot.IsPressed((Key)stickConfig.StickUp))
+            Single stickX = 0;
+            Single stickY = 0;
+            if (snapshot.IsPressed(Key.W))
+            {
+                stickY += (Single).72;
+            }
+            else if (snapshot.IsPressed((Key)stickConfig.StickUp))
             {
                 stickY += 1;
             }
@@ -188,7 +191,7 @@ namespace Ryujinx.Ava.Input
 
             Vector2 stick = new(stickX, stickY);
 
-            stick = Vector2.Normalize(stick);
+            //stick = Vector2.Normalize(stick);
 
             return ((short)(stick.X * short.MaxValue), (short)(stick.Y * short.MaxValue));
         }
