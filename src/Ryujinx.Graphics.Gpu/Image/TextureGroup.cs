@@ -1623,6 +1623,8 @@ namespace Ryujinx.Graphics.Gpu.Image
         /// <param name="size">The size of the flushing memory access</param>
         public void FlushAction(TextureGroupHandle handle, ulong address, ulong size)
         {
+            //swe1r
+            return;
             // If the page size is larger than 4KB, we will have a lot of false positives for flushing.
             // Let's avoid flushing textures that are unlikely to be read from CPU to improve performance
             // on those platforms.

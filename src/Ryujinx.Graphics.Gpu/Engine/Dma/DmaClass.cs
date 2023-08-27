@@ -364,6 +364,8 @@ namespace Ryujinx.Graphics.Gpu.Engine.Dma
                     switch (srcBpp)
                     {
                         case 1:
+                            //swe1r
+                            break;
                             Copy<byte>(dstSpan, srcSpan, dstParams, srcParams);
                             break;
                         case 2:
