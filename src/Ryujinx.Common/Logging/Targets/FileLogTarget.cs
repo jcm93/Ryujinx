@@ -37,7 +37,7 @@ namespace Ryujinx.Common.Logging.Targets
 
             // Clean up old logs, should only keep 3
             FileInfo[] files = logDir.GetFiles("*.log").OrderBy((info => info.CreationTime)).ToArray();
-            for (int i = 0; i < files.Length - 2; i++)
+            for (int i = 0; i < files.Length - 4; i++)
             {
                 try
                 {
